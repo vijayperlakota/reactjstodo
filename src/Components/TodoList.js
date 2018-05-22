@@ -8,7 +8,10 @@ class TodoList extends Component {
         // const todos = this.todos.map((todo) => {
         //             return <Todo todo={todo} />
         //         }            
-        return this.props.todos.map((todo, index)=>{
+        let filteredTodos = this.props.todos.filter((todo) => {
+            return (this.props.filter === "all" || this.props.filter === todo.status);
+        });
+        return filteredTodos.map((todo, index)=>{
                 return <Todo todo={todo} key={todo.id} _delTodo={ this.props._delTodo }/>
         });
     }

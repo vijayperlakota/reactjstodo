@@ -8,10 +8,43 @@
     overflow: scroll;
 }
 
+/* todo-filters starts here */
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+li.filter.active {
+    text-decoration: underline;
+    color: blue;
+}
+
+/* todo-filters ends here */
+
+/* todo-add starts here */
 .todo-add {
     display: flex;
     justify-content: space-around;
 }
+
+.todo-add .text-box {
+    height: 20px;
+    margin: 10px;
+    flex: 1;
+}
+
+.todo-add .add-btn {
+    text-transform: uppercase;
+    margin: 10px;
+    flex: 1;
+}
+/* todo-add ends here */
 
 /* TODO style starts here */
 .todo {

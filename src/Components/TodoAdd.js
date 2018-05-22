@@ -11,8 +11,8 @@ class TodoAdd extends Component {
     render() {
         return (
             <div className="todo-add">
-                <input ref="todoName" type="text" onKeyDown={ this.onEnterKey.bind(this) }/>
-                <input type="button" value="add" onClick={ this.addTodo } />
+                <input className="text-box" ref="todoName" type="text" onKeyDown={ this.onEnterKey.bind(this) }/>
+                {/* <input className="add-btn" type="button" value="add" onClick={ this.addTodo } /> */}
             </div>
         );
     }    
@@ -26,7 +26,7 @@ class TodoAdd extends Component {
         }
         this._addTodo({
             name: this.refs.todoName.value,
-            status: "OPEN"
+            status: "open"
         })
         this.refs.todoName.value = "";
     }
