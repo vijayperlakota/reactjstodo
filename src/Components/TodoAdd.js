@@ -7,7 +7,12 @@ class TodoAdd extends Component {
     }
 
     render() {
-
+        return (
+            <div className="todoadd">
+                <input type="text" value="" />
+                <input type="button" value="add" />
+            </div>
+        );
     }
 }
 

@@ -7,8 +7,18 @@ class TodoList extends Component {
         super(props);
     }
 
-    render() {
+    getTodos() {
+        return (
+            <div>Test Todo 1</div>
+        );
+    }
 
+    render() {
+        return (
+            <div className="todolist">
+                { this.getTodos() }
+            </div>
+        );
     }
 }
 

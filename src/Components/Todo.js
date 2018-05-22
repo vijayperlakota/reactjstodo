@@ -7,7 +7,9 @@ class Todo extends Component {
     }
 
     render() {
-
+        return (
+            <div>Test Todo 1</div>
+        );
     }
 }
 
