@@ -21,13 +21,28 @@ class TodoApp extends Component {
                 status: "OPEN"
             }
         ];
+        this.state = {
+            todos: this.sampleTodos
+        };
+    }
+
+    addTodo(todo) {        
+        this.setState({
+            todos: [...this.state.todos, todo]
+        });
+        // this.setState((prev, curr)=>{
+        //     return {
+        //         todo: [...prev.todos, todo]
+        //     }
+        // });
     }
 
     render() {
+        // console.log("called render", this.state.todos);
         return (
             <div className="todo-app">
-                <TodoAdd />
-                <TodoList todos={this.sampleTodos}/>
+                <TodoAdd _addTodo={ this.addTodo.bind(this) }/>
+                <TodoList todos={ this.state.todos } />
             </div>
         );
     }

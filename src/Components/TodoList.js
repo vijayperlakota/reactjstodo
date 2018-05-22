@@ -4,15 +4,14 @@ import Todo from './Todo';
 
 class TodoList extends Component {
     constructor(props) {
-        super(props);
-        this.todos = this.props.todos;
+        super(props);        
     }
 
     getTodos() {
         // const todos = this.todos.map((todo) => {
         //             return <Todo todo={todo} />
-        //         }        
-        return this.todos.map((todo, index)=>{
+        //         }            
+        return this.props.todos.map((todo, index)=>{
                 return <Todo todo={todo} key={index}/>
         });
     }
