@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import Todo from './Todo';
 
 class TodoList extends Component {
-    constructor(props) {
-        super(props);        
-    }
 
     getTodos() {
         // const todos = this.todos.map((todo) => {
