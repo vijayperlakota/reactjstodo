@@ -1,14 +1,21 @@
 @import url('../../node_modules/font-awesome/css/font-awesome.min.css');
 
 .todo-app {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    max-height: 20%;
+    margin: 30px auto;
     background-color: aliceblue;
+    overflow: scroll;
+}
+
+.todo-add {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* TODO style starts here */
 .todo {
-    display: 'flex';
+    display: flex;
     width: 50%;
     justify-content: space-around;
     margin: 10px auto;

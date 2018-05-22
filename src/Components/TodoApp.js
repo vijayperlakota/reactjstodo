@@ -7,18 +7,22 @@ import '../styles/TodoApp.css';
 class TodoApp extends Component {
     constructor(props) {
         super(props);
+        this.key = 1;
         this.sampleTodos = [
             {
                 name: "One",
-                status: "IN_PROGRESS"
+                status: "IN_PROGRESS",
+                id: this.nextKey()
             },
             {
                 name: "Two",
-                status: "COMPLETE"
+                status: "COMPLETE",
+                id: this.nextKey()
             },
             {
                 name: "Three",
-                status: "OPEN"
+                status: "OPEN",
+                id: this.nextKey()
             }
         ];
         this.state = {
@@ -27,6 +31,7 @@ class TodoApp extends Component {
     }
 
     addTodo(todo) {        
+        todo.id = this.nextKey();
         this.setState({
             todos: [...this.state.todos, todo]
         });
@@ -37,14 +42,27 @@ class TodoApp extends Component {
         // });
     }
 
+    delTodo(id) {
+        let result = this.state.todos.filter((todo) => {
+            return todo.id != id;
+        });
+        this.setState({
+            todos: result
+        });
+    }
+
     render() {
         // console.log("called render", this.state.todos);
         return (
             <div className="todo-app">
                 <TodoAdd _addTodo={ this.addTodo.bind(this) }/>
-                <TodoList todos={ this.state.todos } />
+                <TodoList todos={ this.state.todos } _delTodo={ this.delTodo.bind(this) }/>
             </div>
         );
+    }
+
+    nextKey() {
+        return this.key++;
     }
 }
 

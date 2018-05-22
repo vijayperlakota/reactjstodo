@@ -5,6 +5,7 @@ class Todo extends Component {
     constructor(props) {
         super(props);
         this.todo = this.props.todo;
+        this._delTodo = this.props._delTodo;
     }
 
     render() {
@@ -12,9 +13,13 @@ class Todo extends Component {
         return (
             <div className="todo" >
                 <span className={ `todo-name ${ classes }` } >{ this.todo.name }</span>
-                <i className="fas fa-trash-alt" ></i>
+                <i className="fa fa-trash del-icon" title="Delete" onClick={ this.delTodo.bind(this) }></i>
             </div>
         );
+    }
+
+    delTodo() {
+        this._delTodo(this.props.todo.id);
     }
 }
 

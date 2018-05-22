@@ -9,7 +9,7 @@ class TodoList extends Component {
         //             return <Todo todo={todo} />
         //         }            
         return this.props.todos.map((todo, index)=>{
-                return <Todo todo={todo} key={index}/>
+                return <Todo todo={todo} key={todo.id} _delTodo={ this.props._delTodo }/>
         });
     }
 
