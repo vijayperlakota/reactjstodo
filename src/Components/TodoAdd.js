@@ -11,16 +11,16 @@ class TodoAdd extends Component {
     render() {
         return (
             <div className="todo-add">
-                <input ref="todoName" type="text" />
-                <input type="button" value="add" onClick={ this.addTodo }/>
+                <input ref="todoName" type="text" onKeyDown={ this.onEnterKey.bind(this) }/>
+                <input type="button" value="add" onClick={ this.addTodo } />
             </div>
         );
-    }
+    }    
 
     // Use redux to update the state and the respective view will re-render themselves
     addTodo() {
         if(!this.refs.todoName.value) {
-            // TODO: Use some jQuery growl or any other better handling. Not blocking 'aler'!!!
+            // TODO: Use some jQuery growl or any other better handling. Not blocking 'alert'!!!
             alert('Please add some text for adding todo.');
             return;
         }
@@ -31,6 +31,12 @@ class TodoAdd extends Component {
         this.refs.todoName.value = "";
     }
 
+    onEnterKey(evt) {        
+        var keyCode = evt.keyCode;
+        if(keyCode === 13) {
+            this.addTodo();
+        }
+    }
 }
 
 export default TodoAdd;
