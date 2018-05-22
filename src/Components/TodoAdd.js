@@ -19,7 +19,11 @@ class TodoAdd extends Component {
 
     // Use redux to update the state and the respective view will re-render themselves
     addTodo() {
-        console.log("Clicked");
+        if(!this.refs.todoName.value) {
+            // TODO: Use some jQuery growl or any other better handling. Not blocking 'aler'!!!
+            alert('Please add some text for adding todo.');
+            return;
+        }
         this._addTodo({
             name: this.refs.todoName.value,
             status: "OPEN"
